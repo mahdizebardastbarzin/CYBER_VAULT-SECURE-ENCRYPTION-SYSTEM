@@ -214,7 +214,7 @@ Edit the CSS variables in `styles.css` to customize colors:
 This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
 
 ## 🤝 Contributing
-Contributions are welcome! Please feel free to submit a Pull Request.
+Contributions are welcome! Please read our [Contributing Guidelines](https://github.com/mahdizebardastbarzin/mahdizebardastbarzin/blob/main/CONTRIBUTING.md) to get started.
 
 ## 📧 Contact
 Your Name - [@yourtwitter](https://twitter.com/yourtwitter) - your.email@example.com
@@ -228,7 +228,5 @@ Your Name - [@yourtwitter](https://twitter.com/yourtwitter) - your.email@example
 MIT License
 
 ## 🤝 مشارکت
-مشارکت‌های شما باعث خوشحالی ماست! لطفاً Pull Request ارسال کنید.
+مشارکت‌های شما خوش‌آمد است! لطفاً [راهنمای مشارکت](https://github.com/mahdizebardastbarzin/mahdizebardastbarzin/blob/main/CONTRIBUTING.md) را مطالعه کنید
 
-## 📧 تماس با ما
-نام شما - [@yourtwitter](https://twitter.com/yourtwitter) - your.email@example.com
