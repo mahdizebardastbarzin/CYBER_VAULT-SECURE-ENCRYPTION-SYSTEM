@@ -1,0 +1,216 @@
+/* 
+ * styles.css - CyberVault Matrix Theme
+ * Main stylesheet for the CyberVault application
+ * Contains all the styling for the Matrix-themed encryption tool
+ * 
+ * فایل استایل سایبرولت - تم ماتریکس
+ * استایل اصلی برنامه سایبرولت
+ * شامل تمام استایل‌های مورد نیاز برای ابزار رمزنگاری با تم ماتریکس
+ */
+/* CSS Variables (Custom Properties)
+   Define global variables for colors and other reusable values
+   
+   متغیرهای CSS
+   تعریف متغیرهای سراسری برای رنگ‌ها و مقادیر قابل استفاده مجدد
+*/
+:root {
+  --primary: #00ff41;
+  --bg: #0a0a0a;
+  --panel-bg: rgba(10, 10, 10, 0.9);
+  --text: #00ff41;
+}
+
+/* 
+ * Base styles for the body element
+ * تنظیمات پایه برای المنت body
+ */
+body {
+  margin: 0;
+  padding: 0;
+  background: var(--bg);
+  color: var(--text);
+  font-family: 'Courier New', monospace;
+  overflow: hidden;
+}
+
+/* 
+ * Matrix rain animation effect
+ * Creates the falling code effect in the background
+ * 
+ * انیمیشن باران ماتریکس
+ * ایجاد افکت کدهای در حال سقوط در پس‌زمینه
+ */
+.matrix-rain {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: -1;
+  opacity: 0.15;
+}
+
+/* 
+ * Main container for the application content
+ * Centers the content and sets max width
+ * 
+ * کانتینر اصلی محتوای برنامه
+ * محتوای صفحه را در مرکز قرار می‌دهد و حداکثر عرض را تنظیم می‌کند
+ */
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 2rem;
+}
+
+/* 
+ * Panel component styles
+ * Used for content containers throughout the app
+ * 
+ * استایل‌های کامپوننت پنل
+ * برای کانتینرهای محتوا در سراسر برنامه استفاده می‌شود
+ */
+.panel {
+  background: var(--panel-bg);
+  border: 1px solid var(--primary);
+  border-radius: 4px;
+  padding: 1.5rem;
+  margin-bottom: 2rem;
+  box-shadow: 0 0 15px rgba(0, 255, 65, 0.2);
+}
+
+/* 
+ * Button styles with cyberpunk theme
+ * Includes hover and focus states
+ * 
+ * استایل دکمه‌ها با تم سایبرپانک
+ * شامل حالت‌های هاور و فوکوس
+ */
+.btn {
+  background: transparent;
+  border: 1px solid var(--primary);
+  color: var(--primary);
+  padding: 0.75rem 1.5rem;
+  font-family: 'Courier New', monospace;
+  text-transform: uppercase;
+  font-weight: bold;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.btn:hover {
+  background: var(--primary);
+  color: #000;
+  box-shadow: 0 0 10px var(--primary);
+}
+
+/* 
+ * Form input field styles
+ * Custom styling for text inputs and textareas
+ * 
+ * استایل فیلدهای ورودی فرم
+ * استایل سفارشی برای فیلدهای متنی و تکست‌اریاها
+ */
+.input-field {
+  width: 100%;
+  padding: 0.75rem;
+  margin: 0.5rem 0;
+  background: rgba(0, 0, 0, 0.5);
+  border: 1px solid var(--primary);
+  color: var(--primary);
+  font-family: 'Courier New', monospace;
+}
+
+/* 
+ * Tab navigation component
+ * Used for switching between different content sections
+ * 
+ * کامپوننت ناوبری تب‌ها
+ * برای جابجایی بین بخش‌های مختلف محتوا استفاده می‌شود
+ */
+.tabs {
+  display: flex;
+  margin-bottom: 1rem;
+  border-bottom: 1px solid var(--primary);
+}
+
+.tab {
+  padding: 0.75rem 1.5rem;
+  cursor: pointer;
+  border: 1px solid transparent;
+  border-bottom: none;
+  margin-right: 0.5rem;
+}
+
+.tab.active {
+  border-color: var(--primary);
+  border-bottom: 1px solid var(--bg);
+  margin-bottom: -1px;
+}
+
+/* 
+ * Output display area
+ * Shows encrypted/decrypted content and system messages
+ * 
+ * ناحیه نمایش خروجی
+ * محتوای رمزنگاری/رمزگشایی شده و پیام‌های سیستم را نشان می‌دهد
+ */
+.output {
+  min-height: 200px;
+  background: rgba(0, 0, 0, 0.5);
+  border: 1px solid var(--primary);
+  padding: 1rem;
+  margin: 1rem 0;
+  font-family: 'Courier New', monospace;
+  white-space: pre-wrap;
+  overflow-y: auto;
+  max-height: 300px;
+}
+
+/* 
+ * Status bar at the bottom of the screen
+ * Displays system status and notifications
+ * 
+ * نوار وضعیت در پایین صفحه
+ * وضعیت سیستم و اعلان‌ها را نمایش می‌دهد
+ */
+.status-bar {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  background: rgba(0, 0, 0, 0.8);
+  padding: 0.5rem;
+  border-top: 1px solid var(--primary);
+  display: flex;
+  justify-content: space-between;
+}
+
+/* 
+ * Responsive design adjustments
+ * Ensures the application works well on different screen sizes
+ * 
+ * تنظیمات واکنش‌گرا
+ * اطمینان از نمایش مناسب برنامه در اندازه‌های مختلف صفحه نمایش
+ */
+@media (max-width: 768px) {
+  .container {
+    padding: 1rem;
+  }
+  
+  .tabs {
+    flex-direction: column;
+  }
+  
+  .tab {
+    margin: 0.25rem 0;
+    border: 1px solid var(--primary);
+  }
+  
+  .tab.active {
+    border-bottom: 1px solid var(--primary);
+  }
+}

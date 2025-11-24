@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<!-- 
+  CyberVault - Secure File Encryption
+  Main HTML file for the CyberVault application
+  This file contains the structure and UI components of the application
+  ----------------------------------------
+  سایبرولت - رمزنگاری امن فایل
+  فایل HTML اصلی برنامه سایبرولت
+  این فایل شامل ساختار و کامپوننت‌های رابط کاربری برنامه می‌باشد
+-->
+<html lang="en">
+<head>
+    <!-- Character encoding and responsive viewport settings -->
+    <!-- تنظیمات کدگذاری کاراکترها و نمایش واکنش‌گرا -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <!-- Page title and stylesheet link -->
+    <!-- عنوان صفحه و لینک فایل استایل -->
+    <title>CyberVault - Secure File Encryption</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Background effects -->
+    <!-- افکت‌های پس‌زمینه -->
+    <div class="matrix-bg"></div>
+    <div class="noise-overlay"></div>
+    
+    <!-- Main container for all content -->
+    <!-- کانتینر اصلی برای تمام محتوا -->
+    <div class="container">
+        <!-- Page header with title and subtitle -->
+        <!-- هدر صفحه با عنوان و زیرعنوان -->
+        <header class="cyber-header">
+            <h1 class="cyberpunk glitch" data-text="CYBER_VAULT">CYBER_VAULT</h1>
+            <p class="cyber-subtitle">// SECURE ENCRYPTION SYSTEM //</p>
+        </header>
+
+        <!-- Main content area -->
+        <!-- ناحیه محتوای اصلی -->
+        <div class="main-content">
+            <!-- Left panel for input and controls -->
+            <!-- پنل سمت چپ برای ورودی و کنترل‌ها -->
+            <div class="panel">
+                <!-- Panel header with status LEDs -->
+                <!-- هدر پنل با چراغ‌های وضعیت -->
+                <div class="panel-header">
+                    <span class="led led-red"></span>
+                    <span class="led led-yellow"></span>
+                    <span class="led led-green"></span>
+                    <span class="panel-title">ENCRYPTION TERMINAL</span>
+                </div>
+                
+                <!-- Panel content area -->
+                <!-- ناحیه محتوای پنل -->
+                <div class="panel-content">
+                    <!-- Tab navigation -->
+                    <!-- تب‌های ناوبری -->
+                    <div class="tabs">
+                        <button class="tab-btn active" data-tab="text">TEXT</button>
+                        <button class="tab-btn" data-tab="file">FILE</button>
+                        <button class="tab-btn" data-tab="folder">FOLDER</button>
+                    </div>
+
+                    <!-- Text tab content -->
+                    <!-- محتوای تب متن -->
+                    <div id="text-tab" class="tab-content active">
+                        <div class="form-group">
+                            <label for="input-text">PLAINTEXT INPUT</label>
+                            <textarea id="input-text" class="cyber-input" rows="6" placeholder="Enter your secret message here..."></textarea>
+                        </div>
+                    </div>
+
+                    <!-- File tab content -->
+                    <!-- محتوای تب فایل -->
+                    <div id="file-tab" class="tab-content">
+                        <div class="form-group">
+                            <label for="file-input">SELECT FILE</label>
+                            <div class="file-upload">
+                                <input type="file" id="file-input" class="file-input">
+                                <label for="file-input" class="cyber-button">
+                                    <span class="btn-icon">📁</span> CHOOSE FILE
+                                </label>
+                                <span id="file-name">No file selected</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div id="folder-tab" class="tab-content">
+                        <div class="form-group">
+                            <label>FOLDER SELECTION</label>
+                            <button id="folder-picker" class="cyber-button">
+                                <span class="btn-icon">📂</span> CHOOSE FOLDER
+                            </button>
+                            <div id="folder-info" class="folder-info">
+                                <span id="folder-name">No folder selected</span>
+                                <span id="folder-stats" class="folder-stats"></span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="form-group key-group">
+                        <label for="key-input">ENCRYPTION KEY</label>
+                        <div class="key-input-container">
+                            <input type="text" id="key-input" class="cyber-input" placeholder="Enter or generate a key" readonly>
+                            <button id="generate-key" class="cyber-button small">GENERATE</button>
+                            <button id="copy-key" class="cyber-button small" title="Copy to clipboard">
+                                <span class="btn-icon">⎘</span>
+                            </button>
+                        </div>
+                        <div class="key-actions">
+                            <button id="save-key" class="cyber-button small">SAVE KEY</button>
+                            <button id="load-key" class="cyber-button small">LOAD KEY</button>
+                        </div>
+                    </div>
+
+                    <div class="button-group">
+                        <button id="encrypt-btn" class="cyber-button primary">
+                            <span class="btn-icon">🔒</span> ENCRYPT
+                        </button>
+                        <button id="decrypt-btn" class="cyber-button">
+                            <span class="btn-icon">🔓</span> DECRYPT
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="panel output-panel">
+                <div class="panel-header">
+                    <span class="led led-blue"></span>
+                    <span class="led led-cyan"></span>
+                    <span class="led led-magenta"></span>
+                    <span class="panel-title">OUTPUT</span>
+                </div>
+                <div class="panel-content">
+                    <div id="output-text" class="output-text">
+                        <div class="output-placeholder">
+                            <div class="scanline"></div>
+                            <p>ENCRYPTED OUTPUT WILL APPEAR HERE</p>
+                            <p class="hint">// SELECT MODE AND ENTER YOUR DATA //</p>
+                        </div>
+                    </div>
+                    <div class="output-actions">
+                        <button id="copy-output" class="cyber-button small" disabled>
+                            <span class="btn-icon">⎘</span> COPY
+                        </button>
+                        <button id="download-output" class="cyber-button small" disabled>
+                            <span class="btn-icon">⤓</span> DOWNLOAD
+                        </button>
+                        <button id="share-output" class="cyber-button small" disabled>
+                            <span class="btn-icon">↗</span> SHARE
+                        </button>
+                        <button id="clear-output" class="cyber-button small">
+                            <span class="btn-icon">✕</span> CLEAR
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <footer class="cyber-footer">
+            <div class="status-bar">
+                <span class="status-item">STATUS: <span id="status-message" class="status-active">READY</span></span>
+                <span class="status-item">MODE: <span id="mode-indicator">TEXT</span></span>
+                <span class="status-item">SECURITY: <span class="status-secure">ACTIVE</span></span>
+            </div>
+            <div class="terminal-output" id="terminal-output"></div>
+        </footer>
+    </div>
+
+    <!-- Loading overlay -->
+    <div id="loading-overlay">
+        <div class="loading-content">
+            <div class="matrix-loader">
+                <div class="binary-code">01101000 01100001 01100011 01101011 01101001 01101110 01100111 00100000 01110100 01101000 01100101 00100000 01101101 01100001 01110100 01110010 01101001 01111000</div>
+                <div class="loader-text">INITIALIZING CYBERVAULT</div>
+                <div class="progress-bar">
+                    <div class="progress"></div>
+                </div>
+                <div class="status">Loading Python environment...</div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Sound system -->
+    <script>
+        // Audio context for better sound control
+        let audioContext;
+        
+        // Simple sound generator
+        function createSound(frequency, type = 'sine', duration = 0.1, volume = 0.5) {
+            if (!audioContext) return null;
+            
+            const oscillator = audioContext.createOscillator();
+            const gainNode = audioContext.createGain();
+            
+            oscillator.type = type;
+            oscillator.frequency.value = frequency;
+            
+            gainNode.gain.value = volume;
+            gainNode.gain.exponentialRampToValueAtTime(
+                0.01,
+                audioContext.currentTime + duration
+            );
+            
+            oscillator.connect(gainNode);
+            gainNode.connect(audioContext.destination);
+            
+            return oscillator;
+        }
+        
+        // Initialize audio context on first user interaction
+        function initAudio() {
+            if (!audioContext) {
+                audioContext = new (window.AudioContext || window.webkitAudioContext)();
+            }
+            return audioContext;
+        }
+        
+        // Play sound with Web Audio API
+        function playSound(type) {
+            if (!audioContext) {
+                initAudio();
+            }
+            
+            let sound;
+            
+            switch (type) {
+                case 'click':
+                    sound = createSound(800, 'sine', 0.1, 0.3);
+                    break;
+                case 'error':
+                    sound = createSound(300, 'sine', 0.5, 0.3);
+                    break;
+                case 'success':
+                    sound = createSound(1200, 'sine', 0.3, 0.2);
+                    break;
+                default:
+                    sound = createSound(440, 'sine', 0.1, 0.2);
+            }
+            
+            if (sound) {
+                sound.start();
+                sound.stop(audioContext.currentTime + 0.5); // Ensure the sound stops
+                return sound;
+            }
+            
+            return null;
+        }
+        
+        // Initialize audio on first interaction
+        // راه‌اندازی صدا در اولین تعامل
+        document.addEventListener('click', initAudio, { once: true });
+        document.addEventListener('keydown', initAudio, { once: true });
+    </script>
+
+    <script src="https://cdn.jsdelivr.net/pyodide/v0.23.4/full/pyodide.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
