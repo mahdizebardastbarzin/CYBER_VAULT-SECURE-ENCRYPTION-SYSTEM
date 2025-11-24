@@ -5,7 +5,7 @@
 
 A secure, client-side file encryption tool with a cyberpunk/Matrix theme that runs entirely in your browser.
 
-![CyberVault Screenshot]([screenshot.png](https://github.com/mahdizebardastbarzin/CYBER_VAULT-SECURE-ENCRYPTION-SYSTEM/blob/main/CYBER_VAULT.jpg))
+![CyberVault Screenshot](https://github.com/mahdizebardastbarzin/CYBER_VAULT-SECURE-ENCRYPTION-SYSTEM/blob/main/CYBER_VAULT.jpg)
 
 ## 🌟 Features
 
