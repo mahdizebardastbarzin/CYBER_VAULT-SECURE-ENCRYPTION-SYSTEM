@@ -216,9 +216,6 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 ## 🤝 Contributing
 Contributions are welcome! Please read our [Contributing Guidelines](https://github.com/mahdizebardastbarzin/mahdizebardastbarzin/blob/main/CONTRIBUTING.md) to get started.
 
-## 📧 Contact
-Your Name - [@yourtwitter](https://twitter.com/yourtwitter) - your.email@example.com
-
 ## 🙏 Credits
 - [Pyodide](https://pyodide.org/) - Python in the browser
 - [JSZip](https://stuk.github.io/jszip/) - ZIP file handling
